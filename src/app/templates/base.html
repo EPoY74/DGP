@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_title or "DGP" }}</title>
+</head>
+<body>
+    <header>
+        <h1>DGP — Document Generation Platform</h1>
+        <p>Платформа генерации документов</p>
+        <hr>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
