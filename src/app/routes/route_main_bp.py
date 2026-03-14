@@ -4,7 +4,7 @@ main_bp = Blueprint("main", __name__)
 
 
 @main_bp.get("/")
-def index():
+def index() -> str:
     return render_template(
         "index.html",
         page_title="DGP Главная",
