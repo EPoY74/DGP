@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Предпросмотр документа</h2>
+
+    <section class="preview-card">
+        <p><strong>Название документа:</strong> {{ form_data.document_title }}</p>
+        <p><strong>Номер документа:</strong> {{ form_data.document_number or "—" }}</p>
+        <p><strong>Дата документа:</strong> {{ form_data.document_date }}</p>
+        <p><strong>Объект (Site):</strong> {{ form_data.site_name }}</p>
+        <p><strong>Получатель / заказчик:</strong> {{ form_data.customer_name }}</p>
+        <p><strong>Примечание:</strong></p>
+        <div class="note-box">
+            {{ form_data.note or "—" }}
+        </div>
+    </section>
+
+    <p>
+        <a href="{{ url_for('documents.new_document_form') }}">Вернуться к форме</a>
+    </p>
+{% endblock %}

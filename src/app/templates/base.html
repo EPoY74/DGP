@@ -4,15 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page_title or "DGP" }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
 </head>
 <body>
-    <header>
-        <h1>DGP — Document Generation Platform</h1>
-        <p>Платформа генерации документов</p>
-        <hr>
+    <header class="page-header">
+        <div class="container">
+            <h1>DGP — Document Generation Platform</h1>
+            <p>Платформа генерации документов</p>
+
+            <nav>
+                <a href="{{ url_for('main.index') }}">Главная</a>
+                |
+                <a href="{{ url_for('documents.new_document_form') }}">Новый документ</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
+    <main class="container">
         {% block content %}{% endblock %}
     </main>
 </body>
